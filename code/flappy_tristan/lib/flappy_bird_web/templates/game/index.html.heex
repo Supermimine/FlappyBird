@@ -1,0 +1,52 @@
+<main>
+  <div>
+    <div id="game" phx-window-keydown="keydown">
+      <header class="relative z-50 flex items-center justify-between px-4 py-2 antialiased text-white">
+        <div class="flex items-center opacity-75">
+          <%= FlappyBirdWeb.ViewHelpers.svg :phoenix, class: "h-8 w-8 mr-2 fill-current" %>
+          <h1 class="text-xl font-normal">Flappy Bird</h1>
+        </div>
+        <div style="font-variant-numeric: tabular-nums;">
+          <span class="pr-2 font-bold">Score:</span> <%= format_score(@game.score) %>
+        </div>
+      </header>
+
+      <div id="bird" style={"left: #{@game.bird.x}vw; top: #{@game.bird.y}vh; transform: rotate({if @game.bird.velocity > 0, do: -25, else: 25}deg);"}>
+        <img src={Routes.static_path(FlappyBirdWeb.Endpoint,"/images/bird_#{@game.bird.wings}.png")}/>
+      </div>
+
+      <%= for pipe <- @game.pipes do %>
+        <div class="pipe" style={"left: #{pipe.x}vw; top: #{pipe.y}vh;"}>
+          <img src={Routes.static_path(FlappyBirdWeb.Endpoint,"/images/pipe_#{pipe.dir}.png")} />
+        </div>
+      <% end %>
+
+      <div id="ground">
+        <!--
+        <div class="pt-24 pl-4"><%= inspect Map.take(@game, [:bird, :pipes, :state, :fps]) %></div>
+        -->
+        &nbsp;
+      </div>
+
+      <div id="GameOverBox" class={["shadow-lg fixed pin z-50 overflow-auto w-full"] ++ [(if @game.state == :ok, do: "hidden")]} style="background-color: rgba(96,111,123,0.4);">
+        <div role="dialog" class="relative flex-col py-6 mx-8 mt-32 mb-auto bg-white rounded-sm md:max-w-sm md:mx-auto">
+          <a href="/" class="no-underline" style="margin-left: 40px; font-size: x-large; color: black;">&#x2B05;</a>
+          <div class="text-center">
+            <h1 class="mt-4 mb-6">Game Over!</h1>
+            <p class="text-xl">You scored <%= format_score(@game.score) %></p>
+            <div class="mt-12 mb-8 flex" style="justify-content: center;">
+              <a href="/game" class="p-3 text-white no-underline rounded shadow bg-cyan-500">
+                Play again
+              </a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button class="p-3 text-white no-underline rounded shadow bg-cyan-500" phx-click="save" >
+                Save score
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>

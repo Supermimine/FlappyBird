@@ -1,0 +1,17 @@
+<div id="game">
+    <a href="/" class="no-underline" style="margin-left: 40px; margin-top:40px; font-size: x-large; color: black;">&#x2B05;</a>
+    <div class="text-center" style="text-align: -webkit-center;">
+        <h1 class="text-xl font-normal mt-4">Scores list</h1>
+        <hr style="border: 0.1px solid black; width: 300px;">
+
+        <%= for score <- @scores do %>
+            <div>
+                <span> <%= score.value %> </span>
+
+                <span style="cursor:pointer" phx-click="deleted" phx-value-id={score.id}  >
+                    &#x1F5D1;
+                </span>
+            </div>
+        <% end %>
+    </div>
+</div>

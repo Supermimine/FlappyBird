@@ -1,0 +1,5 @@
+# Voir http://www.robotstxt.org/robotstxt.html pour la documentation sur l'utilisation du fichier robots.txt
+#
+# Pour bannir toutes les araignées de tout le site, décommentez les deux lignes suivantes :
+# User-agent: *
+# Disallow: /

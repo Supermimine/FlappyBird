@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.29.1">
+    <meta name="project" content="FlappyBird v1.0.0">
+
+    <title>FlappyBird.Game — FlappyBird v1.0.0</title>
+    <link rel="stylesheet" href="dist/html-elixir-V2ETBPMB.css" />
+
+
+    <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
+    <script src="dist/handlebars.templates-IV5W3OL2.js"></script>
+    <script src="dist/sidebar_items-B7E48FF8.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-XN2TSG4M.js"></script>
+
+
+  </head>
+  <body data-type="modules" class="page-module">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+    <div class="sidebar-projectDetails">
+      <a href="FlappyBird.html" class="sidebar-projectName" translate="no">
+FlappyBird
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v1.0.0
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <output role="status" id="toast"></output>
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="icon-action display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+  <span translate="no">FlappyBird.Game</span> 
+  <small class="app-vsn" translate="no">(FlappyBird v1.0.0)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>Context contenant les fonctions pour le déroulement d'une <code class="inline">Game</code>.</p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#flap/1" translate="no">flap(game)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Action de voler lorsque l'utilisateur appuis sur une touche ou clique sur l'écran de jeu.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#new/0" translate="no">new()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Création d'une nouvelle partie.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#save_score/1" translate="no">save_score(v)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Sauvegarder le score d'une partie.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#update/1" translate="no">update(game)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Mise à jour de la partie.
+  Boucle d'exécution principale du jeu en exécution</p></div>
+
+    </div>
+
+</div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="flap/1">
+
+  <div class="detail-header">
+    <a href="#flap/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">flap(game)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Action de voler lorsque l'utilisateur appuis sur une touche ou clique sur l'écran de jeu.</p><h2 id="flap/1-description" class="section-heading">
+  <a href="#flap/1-description" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">description</p>
+  </a>
+  Description
+</h2>
+<p>  Reçois un <code class="inline">game</code>, puis modifie la variable <code class="inline">velocity</code> de son composant <code class="inline">bird</code> pour la valeur 3.</p><h2 id="flap/1-exemples" class="section-heading">
+  <a href="#flap/1-exemples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">exemples</p>
+  </a>
+  Exemples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">flap</span><span class="p" data-group-id="3372108247-1">(</span><span class="p" data-group-id="3372108247-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p" data-group-id="3372108247-2">}</span><span class="p" data-group-id="3372108247-1">)</span><span class="w">
+</span><span class="p" data-group-id="3372108247-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3372108247-4">%</span><span class="nc" data-group-id="3372108247-4">Game</span><span class="p" data-group-id="3372108247-4">{</span><span class="p" data-group-id="3372108247-4">}</span><span class="p" data-group-id="3372108247-3">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">flap</span><span class="p" data-group-id="3372108247-5">(</span><span class="p" data-group-id="3372108247-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="3372108247-6">}</span><span class="p" data-group-id="3372108247-5">)</span><span class="w">
+</span><span class="p" data-group-id="3372108247-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3372108247-8">%</span><span class="nc" data-group-id="3372108247-8">Ecto.Changeset</span><span class="p" data-group-id="3372108247-8">{</span><span class="p" data-group-id="3372108247-8">}</span><span class="p" data-group-id="3372108247-7">}</span></code></pre><h2 id="flap/1-type-d-appel" class="section-heading">
+  <a href="#flap/1-type-d-appel" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">type-d-appel</p>
+  </a>
+  Type d'appel
+</h2>
+<p>  Game.flap(game)</p><h2 id="flap/1-type-de-retour" class="section-heading">
+  <a href="#flap/1-type-de-retour" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">type-de-retour</p>
+  </a>
+  Type de retour
+</h2>
+<p>  retourne <code class="inline">game</code></p>
+  </section>
+</section>
+<section class="detail" id="new/0">
+
+  <div class="detail-header">
+    <a href="#new/0" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">new()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Création d'une nouvelle partie.</p><h2 id="new/0-exemples" class="section-heading">
+  <a href="#new/0-exemples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">exemples</p>
+  </a>
+  Exemples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">new</span><span class="p" data-group-id="7762430495-1">(</span><span class="p" data-group-id="7762430495-1">)</span><span class="w">
+</span><span class="p" data-group-id="7762430495-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7762430495-3">%</span><span class="nc" data-group-id="7762430495-3">Game</span><span class="p" data-group-id="7762430495-3">{</span><span class="p" data-group-id="7762430495-3">}</span><span class="p" data-group-id="7762430495-2">}</span></code></pre><h2 id="new/0-type-d-appel" class="section-heading">
+  <a href="#new/0-type-d-appel" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">type-d-appel</p>
+  </a>
+  Type d'appel
+</h2>
+<p>  Game.new()</p><h2 id="new/0-valeur-par-défaut" class="section-heading">
+  <a href="#new/0-valeur-par-défaut" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">valeur-par-défaut</p>
+  </a>
+  Valeur par défaut
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="n">game</span><span class="w"> </span><span class="p" data-group-id="4839987768-1">{</span><span class="w">
+  </span><span class="ss">bird</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4839987768-2">%{</span><span class="w"> </span><span class="ss">x</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="ss">y</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w"> </span><span class="ss">wings</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="ss">velocity</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p" data-group-id="4839987768-2">}</span><span class="w">
+  </span><span class="ss">pipes</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4839987768-3">[</span><span class="p" data-group-id="4839987768-3">]</span><span class="w">
+  </span><span class="ss">score</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="w">
+</span><span class="p" data-group-id="4839987768-1">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="save_score/1">
+
+  <div class="detail-header">
+    <a href="#save_score/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">save_score(v)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Sauvegarder le score d'une partie.</p><h2 id="save_score/1-variable-d-argument" class="section-heading">
+  <a href="#save_score/1-variable-d-argument" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">variable-d-argument</p>
+  </a>
+  Variable d'argument
+</h2>
+<p>  v -&gt; value --&gt; valeur du score à sauvegarder en string</p><h2 id="save_score/1-description" class="section-heading">
+  <a href="#save_score/1-description" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">description</p>
+  </a>
+  Description
+</h2>
+<p>  Appel la fonction <code class="inline">Score.changeset()</code> pour sauvegarder le score dans la base de données
+  avec comme paramètre Entité/Structure <code class="inline">Score</code> vide --&gt; <code class="inline">%Score{}</code> et la valeur a changer --&gt; <code class="inline">%{&quot;value&quot; =&gt; v}</code></p><h2 id="save_score/1-exemples" class="section-heading">
+  <a href="#save_score/1-exemples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">exemples</p>
+  </a>
+  Exemples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">save_score</span><span class="p" data-group-id="1418536514-1">(</span><span class="n">value</span><span class="p" data-group-id="1418536514-1">)</span><span class="w">
+</span><span class="p" data-group-id="1418536514-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1418536514-3">%</span><span class="nc" data-group-id="1418536514-3">Game</span><span class="p" data-group-id="1418536514-3">{</span><span class="p" data-group-id="1418536514-3">}</span><span class="p" data-group-id="1418536514-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">save_score</span><span class="p" data-group-id="1418536514-4">(</span><span class="n">bad_value</span><span class="p" data-group-id="1418536514-4">)</span><span class="w">
+</span><span class="p" data-group-id="1418536514-5">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1418536514-6">%</span><span class="nc" data-group-id="1418536514-6">Ecto.Changeset</span><span class="p" data-group-id="1418536514-6">{</span><span class="p" data-group-id="1418536514-6">}</span><span class="p" data-group-id="1418536514-5">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="update/1">
+
+  <div class="detail-header">
+    <a href="#update/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">update(game)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Mise à jour de la partie.
+  Boucle d'exécution principale du jeu en exécution</p><p>  Est exécuter seulement lorsque '<code class="inline">state</code> == :ok'</p><h2 id="update/1-description" class="section-heading">
+  <a href="#update/1-description" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">description</p>
+  </a>
+  Description
+</h2>
+<p>  Il assigne 2 variables qui sont:</p><ul><li>time --&gt; qui est le temps du système actuellement</li><li>dt --&gt; qui est la conversion du temps actuel en <code class="inline">tick</code> moins le dernier temps en <code class="inline">tick</code> que la partie a été <code class="inline">updated</code>.</li></ul><p>  Par la suite, avec le <code class="inline">game</code> qu'il reçois il appel les fonctions privé suivante:</p><ul><li>move_bird --&gt; calcul les paramètres de bird (<code class="inline">wings</code>, <code class="inline">velocity</code> et <code class="inline">y</code>).</li><li>move_pipes --&gt; calcul la nouvelle position des tuyaux.</li><li>check_for_collisions --&gt; Compare la position du personnage(oiseau) et des obstacles(tuyaux, sol et bordure du navigateur web). Puis change le <code class="inline">state</code> selon le résultat.</li><li>add_pipes --&gt; Ajout des tuyaux a une distance régulière, mais avec une hauteur aléatoire.</li></ul><p>  Ensuite, il augmente le score de la partie de <code class="inline">0.1 * dt</code></p><p>  Finalement, il change le <code class="inline">updated</code> de la <code class="inline">game</code> pour <code class="inline">time</code></p><h2 id="update/1-exemples" class="section-heading">
+  <a href="#update/1-exemples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">exemples</p>
+  </a>
+  Exemples
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">update</span><span class="p" data-group-id="6403684311-1">(</span><span class="p" data-group-id="6403684311-2">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p" data-group-id="6403684311-2">}</span><span class="p" data-group-id="6403684311-1">)</span><span class="w">
+</span><span class="p" data-group-id="6403684311-3">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6403684311-4">%</span><span class="nc" data-group-id="6403684311-4">Game</span><span class="p" data-group-id="6403684311-4">{</span><span class="p" data-group-id="6403684311-4">}</span><span class="p" data-group-id="6403684311-3">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">update</span><span class="p" data-group-id="6403684311-5">(</span><span class="p" data-group-id="6403684311-6">%{</span><span class="ss">field</span><span class="p">:</span><span class="w"> </span><span class="n">bad_value</span><span class="p" data-group-id="6403684311-6">}</span><span class="p" data-group-id="6403684311-5">)</span><span class="w">
+</span><span class="p" data-group-id="6403684311-7">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6403684311-8">%</span><span class="nc" data-group-id="6403684311-8">Ecto.Changeset</span><span class="p" data-group-id="6403684311-8">{</span><span class="p" data-group-id="6403684311-8">}</span><span class="p" data-group-id="6403684311-7">}</span></code></pre><h2 id="update/1-type-d-appel" class="section-heading">
+  <a href="#update/1-type-d-appel" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">type-d-appel</p>
+  </a>
+  Type d'appel
+</h2>
+<p>  Game.update(game)</p><h2 id="update/1-type-de-retour" class="section-heading">
+  <a href="#update/1-type-de-retour" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">type-de-retour</p>
+  </a>
+  Type de retour
+</h2>
+<p>  retourne <code class="inline">game</code></p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+        <p>
+
+          <span class="line">
+            <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+              Search HexDocs
+            </button>
+
+              <a href="FlappyBird.epub" title="ePub version">
+                Download ePub version
+              </a>
+
+          </span>
+        </p>
+
+        <p class="built-using">
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.29.1) for the
+
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

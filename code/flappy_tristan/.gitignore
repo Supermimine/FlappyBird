@@ -1,0 +1,34 @@
+# Le répertoire dans lequel Mix écrira les artefacts compilés.
+/_build/
+
+# Si vous exécutez "mix test --cover", les actifs de couverture se retrouvent ici.
+/cover/
+
+# Le répertoire Mix télécharge vos sources de dépendances.
+/deps/
+
+# Où les dépendances tierces telles que la sortie ExDoc ont généré des documents.
+/doc/
+
+# Ignorez les fichiers .fetch au cas où vous voudriez éditer votre projet en local.
+/.fetch
+
+# Si la VM plante, elle génère un dump, ignorons-le aussi.
+erl_crash.dump
+
+# Ignorer également les artefacts d'archive (construits via "mix archive.build").
+*.ez
+
+# Ignorer l'archive tar du paquet (construit via "mix hex.build").
+flappy_bird-*.tar
+
+# Ignorer les assets produits par les outils de build.
+/priv/static/assets/
+
+# Ignorer le cache des actifs digérés.
+/priv/static/cache_manifest.json
+
+# Si vous utilisez Node.js/npm, vous souhaitez les ignorer.
+npm-debug.log
+/assets/node_modules/
+

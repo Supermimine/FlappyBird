@@ -13,7 +13,7 @@ The game assets were repurposed from the [Motion Game](https://github.com/HipByt
 ## Running it locally
 To start your Phoenix server:
 
-* Install dependencies with ˋˋˋmix deps.getˋˋˋ
-* Install Node.js dependencies with ˋˋˋcd assets && npm installˋˋˋ
-* Start Phoenix endpoint with ˋˋˋmix phx.serverˋˋˋ
+* Install dependencies with ˋmix deps.getˋ
+* Install Node.js dependencies with ˋcd assets && npm installˋ
+* Start Phoenix endpoint with ˋmix phx.serverˋ
 Now you can visit [localhost:4000](http://localhost:4000/) from your browser.
